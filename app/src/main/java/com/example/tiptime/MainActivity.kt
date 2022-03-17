@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculateTip() {
-        val stringInTextField = binding.costOfService.text.toString()
+        val stringInTextField = binding.costOfServiceEditText.text.toString()
         val cost = stringInTextField.toDoubleOrNull()
 
         if (cost == null || cost == 0.0) {
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun displayTip(tip : Double) {
-        val formattedTip = getCurrencyInstance(Locale.UK).format(tip)
+        val formattedTip = getCurrencyInstance().format(tip)
         binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
     }
 }
